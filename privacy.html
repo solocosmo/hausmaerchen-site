@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hausmärchen — Privacy Policy</title>
+<meta name="description" content="Hausmärchen privacy policy. Offline by design — no accounts, no analytics, no tracking, no data leaves the device.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-slate: #1F3239; --bg-slate-2: #1A2C34; --bg-slate-3: #14252C;
+    --brass: #C9A95C; --vellum: #E2D5B8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg-slate-3); color: var(--vellum); }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400; line-height: 1.75;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 14% 8%, rgba(201,169,92,0.18) 0%, transparent 55%),
+      linear-gradient(180deg, var(--bg-slate) 0%, var(--bg-slate-3) 100%);
+    background-attachment: fixed;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 8vh 24px 6vh; }
+
+  header { text-align: center; margin-bottom: 6vh; }
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    color: var(--brass);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    color: var(--brass);
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+  }
+  .effective {
+    margin-top: 14px;
+    font-style: italic;
+    color: rgba(226,213,184,0.65);
+    font-size: 0.95rem;
+  }
+
+  article > p { font-size: 1.08rem; margin-bottom: 18px; }
+  article > p.lead {
+    font-size: 1.18rem;
+    font-style: italic;
+    margin: 20px 0 32px;
+    color: rgba(226,213,184,0.92);
+  }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--brass);
+    letter-spacing: 0.06em;
+    margin: 36px 0 14px;
+  }
+
+  ul { margin: 12px 0 20px 22px; }
+  ul li { margin-bottom: 8px; }
+
+  a { color: var(--brass); border-bottom: 1px solid rgba(201,169,92,0.4); text-decoration: none; }
+  a:hover { color: var(--vellum); }
+
+  .nav-back {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: rgba(226,213,184,0.7);
+    text-transform: uppercase;
+    border: none;
+    margin-bottom: 24px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 6vh 16px 4vh;
+    color: rgba(226,213,184,0.55);
+    font-size: 0.88rem;
+    border-top: 1px solid rgba(201,169,92,0.15);
+    margin-top: 6vh;
+  }
+  footer a { color: rgba(226,213,184,0.75); border-bottom-color: rgba(226,213,184,0.20); }
+</style>
+</head>
+
+<body>
+<main>
+
+<a href="index.html" class="nav-back">← Hausmärchen</a>
+
+<header>
+  <div class="eyebrow">Privacy Policy</div>
+  <h1>Offline by design</h1>
+  <div class="effective">Effective May 28, 2026 · Last updated May 28, 2026</div>
+</header>
+
+<article>
+
+<p class="lead">Hausmärchen is a standalone iOS reading app. It does not collect, transmit, share, sell, rent, or analyze any information about you. The app makes no network calls at runtime. This policy describes that posture in plain English so anyone — Apple's review team, a privacy researcher, a parent — can verify it.</p>
+
+<h2>What we collect</h2>
+<p><strong>Nothing.</strong> Hausmärchen does not gather usage data, identifiers, location, contacts, photos, microphone, camera, or any biometric information. There is no analytics SDK, no crash reporter, no A/B testing framework, no behavioral telemetry, and no advertising identifier read.</p>
+
+<h2>What we send</h2>
+<p><strong>Nothing.</strong> The app performs no runtime HTTP, WebSocket, or any other network call. Every tale, illustration, and font is compiled into the app bundle at build time and read from local storage on the device. The bundled tale texts come from de.wikisource.org and are licensed CC-BY-SA; the historical illustrations are in the public domain. Both are embedded at build time, not fetched.</p>
+<p>Tapping a link inside the Gallery or Settings (Wikipedia, an artist's Etsy shop, the studio's email) opens that destination in Safari or Mail. At that point, the linked site's or service's own privacy policy applies. Hausmärchen itself sees no part of that traffic.</p>
+
+<h2>Accounts</h2>
+<p>There are no accounts. There is no sign-in, no email collection, no password creation, no cloud sync. Your reading preferences (favorites, last-read tale, font size, language choice) live only on this device.</p>
+
+<h2>Children's Mode</h2>
+<p>If you set a parent PIN, it is hashed locally with SHA-256 and a per-install salt before being stored. The plaintext PIN is never written to disk, never transmitted, and not recoverable. After three wrong entries the keypad locks for 60 seconds, then 5 minutes, then 15 minutes, then 60 minutes for each subsequent failed cycle — the same escalation pattern Apple uses on the iOS lock screen.</p>
+<p>With Children's Mode on, the app narrows to the Junior selection of tales. The Gallery, Sources, Editorial Notes, and most of Settings hide. The German, Victorian, and Modern reading variants hide. Exiting Children's Mode requires the PIN.</p>
+
+<h2>Algorithmic transparency</h2>
+<p>Hausmärchen contains no machine-learning model, no recommendation engine, and no personalization layer. The Home grid displays the eight thematic sections in a fixed editorial order. Each section's tale list is sorted by canonical KHM number. The optional daily-tale notification, when scheduled, selects from a fixed list using a date-seeded pseudo-random pick: the same calendar date always returns the same tale, so the choice is deterministic and inspectable rather than personalized.</p>
+<p>The free-tier hero illustration on each tale also follows a fixed rule (Jessica von Braun's plate first if one exists for that tale, otherwise Arthur Rackham's, otherwise a deterministic pick from the remaining illustrators for that tale). No algorithm learns from your behavior. No content reorders based on what you have read.</p>
+
+<h2>Purchases</h2>
+<p>The optional "Hausmärchen Complete" unlock is a one-time, non-consumable In-App Purchase processed entirely by Apple's StoreKit. We do not receive your name, email, payment information, or device identifier. Apple sends us only an anonymized confirmation that a purchase belonging to your Apple ID is valid. The Restore Purchases option in Settings re-reads that entitlement from Apple — it does not contact our servers, because we do not have servers.</p>
+
+<h2>Not directed at children under 13</h2>
+<p>Hausmärchen is intended for adult readers and for adults sharing tales with children. The Children's Mode feature is parent-controlled — a child cannot enable, disable, or exit it without the parent PIN. The app does not collect any information from any user, child or adult. We comply with COPPA by collecting nothing.</p>
+
+<h2>Apple-provided services we touch</h2>
+<ul>
+  <li><strong>StoreKit 2</strong> — handles the optional one-time purchase. Apple's privacy policy governs that transaction.</li>
+  <li><strong>UserNotifications</strong> — schedules the optional daily-tale local notification on the device, if you have enabled it. The notification is generated and delivered locally; nothing is sent to a server.</li>
+</ul>
+<p>That is the complete list.</p>
+
+<h2>Updates to this policy</h2>
+<p>If we change this policy, the new version will appear at this URL with a new "Last updated" date. Because the app does not make network calls, we have no way to notify you within the app itself. Substantive changes will be summarized in the App Store release notes for the build that introduces them.</p>
+
+<h2>Questions</h2>
+<p>For any question about your data, this policy, or the app's privacy posture, write to <a href="mailto:solocosmo@gmail.com">solocosmo@gmail.com</a>.</p>
+
+</article>
+
+</main>
+
+<footer>
+  <p>Hausmärchen · Solocosmo Studios · © 2026 · <a href="terms.html">Terms</a> · <a href="index.html">About</a></p>
+</footer>
+
+</body>
+</html>
