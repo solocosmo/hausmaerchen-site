@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hausmärchen — Brothers Grimm, carefully kept</title>
+<meta name="description" content="Hausmärchen. The Brothers Grimm in four reading variants — German, Victorian, Modern, Junior — with a parent-locked Children's Mode and seventeen illustrators. A native iOS reader from Solocosmo Studios.">
+
+<meta property="og:title" content="Hausmärchen — Brothers Grimm, carefully kept">
+<meta property="og:description" content="245 tales · four variants · seventeen illustrators · offline. Solocosmo Studios.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-slate:   #1F3239;
+    --bg-slate-2: #1A2C34;
+    --bg-slate-3: #14252C;
+    --brass:      #C9A95C;
+    --burgundy:   #5C1A2A;
+    --tobacco:    #6B4220;
+    --plum:       #4D2641;
+    --vellum:     #E2D5B8;
+    --rose:       #9E3957;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { background: var(--bg-slate-3); color: var(--vellum); }
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.7;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 14% 8%, rgba(201,169,92,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 86% 92%, rgba(107,66,32,0.30) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(77,38,65,0.28) 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg-slate) 0%, var(--bg-slate-2) 50%, var(--bg-slate-3) 100%);
+    background-attachment: fixed;
+  }
+
+  /* Subtle noise overlay — matches the in-app background recipe */
+  body::after {
+    content: "";
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(circle at 12% 14%, rgba(226,213,184,0.04) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 78% 8%, rgba(226,213,184,0.03) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 22% 60%, rgba(226,213,184,0.04) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 88% 36%, rgba(226,213,184,0.03) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 48% 88%, rgba(226,213,184,0.04) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 8% 82%, rgba(226,213,184,0.03) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 92% 76%, rgba(226,213,184,0.04) 0 1px, transparent 1.5px);
+    pointer-events: none; z-index: 0;
+  }
+
+  main { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header { text-align: center; padding: 14vh 16px 6vh; }
+
+  .mark {
+    width: 76px; height: 76px; margin: 0 auto 28px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(201,169,92,0.55);
+    border-radius: 50%;
+    color: var(--brass);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    position: relative;
+  }
+  .mark::after {
+    content: "";
+    position: absolute; inset: -14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,169,92,0.18) 0%, transparent 65%);
+    z-index: -1;
+  }
+
+  h1.title {
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 7vw, 4rem);
+    color: var(--brass);
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .tagline {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: rgba(226,213,184,0.85);
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    color: var(--brass);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  section { padding: 6vh 0; }
+  section + section { border-top: 1px solid rgba(201,169,92,0.15); }
+
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    color: var(--brass);
+    letter-spacing: 0.05em;
+    margin-bottom: 22px;
+  }
+
+  h3 {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--brass);
+    letter-spacing: 0.04em;
+    margin: 24px 0 10px;
+  }
+
+  p { margin-bottom: 14px; font-size: 1.07rem; }
+  p.lead { font-size: 1.18rem; font-style: italic; color: rgba(226,213,184,0.92); margin-bottom: 22px; }
+
+  ul.specs {
+    list-style: none;
+    margin: 18px 0 24px;
+    padding: 0;
+  }
+  ul.specs li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(201,169,92,0.10);
+    display: flex; gap: 14px;
+  }
+  ul.specs li::before {
+    content: "·";
+    color: var(--brass);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 18px;
+    margin: 26px 0 12px;
+  }
+  .meta-grid .cell {
+    padding: 18px 16px;
+    border: 1px solid rgba(201,169,92,0.20);
+    border-radius: 4px;
+    background: rgba(20,37,44,0.55);
+    text-align: center;
+  }
+  .meta-grid .cell .n {
+    display: block;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.9rem;
+    color: var(--brass);
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .meta-grid .cell .l {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    color: rgba(226,213,184,0.7);
+    text-transform: uppercase;
+  }
+
+  .variants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .variants-grid .v {
+    padding: 22px 20px;
+    border: 1px solid rgba(201,169,92,0.18);
+    border-radius: 4px;
+    background: linear-gradient(155deg, rgba(92,26,42,0.25) 0%, rgba(20,37,44,0.45) 100%);
+  }
+  .variants-grid .v h4 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--brass);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .variants-grid .v p { font-size: 0.95rem; margin: 0; color: rgba(226,213,184,0.88); }
+
+  a { color: var(--brass); text-decoration: none; border-bottom: 1px solid rgba(201,169,92,0.35); }
+  a:hover { color: var(--vellum); border-bottom-color: var(--brass); }
+
+  .links-row {
+    display: flex; flex-wrap: wrap; gap: 18px 28px;
+    padding: 24px 0;
+    justify-content: center;
+  }
+  .links-row a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-bottom: none;
+    padding: 12px 22px;
+    border: 1px solid rgba(201,169,92,0.40);
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .links-row a:hover {
+    background: rgba(201,169,92,0.10);
+    color: var(--vellum);
+  }
+
+  footer {
+    text-align: center;
+    padding: 8vh 16px 6vh;
+    color: rgba(226,213,184,0.55);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(201,169,92,0.12);
+    margin-top: 4vh;
+  }
+  footer a { color: rgba(226,213,184,0.75); border-bottom-color: rgba(226,213,184,0.20); }
+
+  .rule {
+    width: 60px; height: 1px;
+    background: var(--brass);
+    opacity: 0.5;
+    margin: 28px auto;
+  }
+</style>
+</head>
+
+<body>
+<main>
+
+<a href="index.html" style="position:relative; z-index:1; display:inline-block; padding-top:28px; font-family:'Cinzel',serif; font-size:0.74rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(226,213,184,0.65); border-bottom:none;">← Solocosmo Studios</a>
+
+<header>
+  <div class="mark">✦</div>
+  <div class="eyebrow">From Solocosmo Studios</div>
+  <h1 class="title">Hausmärchen</h1>
+  <div class="tagline">Brothers Grimm, carefully kept.</div>
+  <div class="rule"></div>
+  <p style="max-width: 540px; margin: 0 auto; font-size: 1.1rem; color: rgba(226,213,184,0.9);">
+    Two hundred and forty-five tales — every canonical Märchen, the Children's Legends, and the Lost Tales the Grimms collected then withdrew. Read in German, in Margaret Hunt's 1884 Victorian English, in a careful modern translation, or in a hand-written Junior edition for ages four to twelve. Offline. No accounts. No tracking.
+  </p>
+</header>
+
+<section>
+  <h2>Inside the library</h2>
+  <div class="meta-grid">
+    <div class="cell"><span class="n">245</span><span class="l">Tales</span></div>
+    <div class="cell"><span class="n">4</span><span class="l">Variants</span></div>
+    <div class="cell"><span class="n">17</span><span class="l">Illustrators</span></div>
+    <div class="cell"><span class="n">660+</span><span class="l">Plates</span></div>
+  </div>
+  <p>The canonical corpus — 210 numbered Märchen plus the variant KHM 151a and ten Children's Legends — sits alongside 35 paralipomena from the 1812/1815 first editions: the tales the Grimms collected and later set aside, surfaced here as a Lost Tales section. KHM 110 is omitted for its antisemitic stereotypes; the corpus counts 245 because of that single editorial choice.</p>
+</section>
+
+<section>
+  <h2>Four reading variants</h2>
+  <div class="variants-grid">
+    <div class="v">
+      <h4>Deutsch</h4>
+      <p>The canonical German — 1857 main corpus, 1812/1815 for the paralipomena. Sourced from de.wikisource.org.</p>
+    </div>
+    <div class="v">
+      <h4>Victorian</h4>
+      <p>Margaret Hunt's 1884 English translation, the standard public-domain rendering — formal, exact, sometimes archaic.</p>
+    </div>
+    <div class="v">
+      <h4>Modern</h4>
+      <p>A rules-based modernization of Hunt's text — thou becomes you, the archaic phrasing softens, the cadence keeps.</p>
+    </div>
+    <div class="v">
+      <h4>Junior</h4>
+      <p>Sixty curated tales rewritten for ages four to twelve. Warm, unhurried, plain words; no on-page violence.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Children's Mode</h2>
+  <p>Set a four-digit parent PIN once. With Children's Mode on, the library narrows to the Junior selection, the language toggle disappears, the tab bar hides, the Gallery and Settings lock behind the PIN. Three wrong tries triggers an escalating cooldown — sixty seconds, then five minutes, fifteen, sixty — matching iOS lock-screen behavior. The PIN is hashed locally with SHA-256 and a per-install salt; the plaintext is never written to disk.</p>
+  <p>This is the whole reason the feature exists: a child can be handed the device unsupervised without slipping into a tale meant for adults. Trust is the product.</p>
+</section>
+
+<section>
+  <h2>Seventeen illustrators</h2>
+  <p>Every public-domain master of the German and English fairy-tale canon, plus three contemporary contributors. Arthur Rackham, Otto Ubbelöhde, Walter Crane, Kay Nielsen, Anne Anderson, Maxfield Parrish, Adrienne Ségur, Carl Offterdinger, Hermann Vogel, Alexander Zick, Robert Anning Bell, Henry Justice Ford, Elenore Plaisted Abbott, Ludwig Emil Grimm, Gustave Doré, Gustaf Tenggren — the canon's whole hand. Jessica von Braun's original watercolours and Jasmine Becket-Griffith's CC0 plates sit alongside them.</p>
+  <p>Six hundred and sixty plates total. Every illustration bundled at build time — the app never reaches the network to fetch an image.</p>
+</section>
+
+<section>
+  <h2>What the app does not do</h2>
+  <ul class="specs">
+    <li>No accounts. No sign-in. Nothing to forget.</li>
+    <li>No analytics. No telemetry. No crash reporters. The app does not know you opened it.</li>
+    <li>No ads. No personalization. No recommendation engine — the library order is hand-curated.</li>
+    <li>No runtime network calls. Every tale, illustration, and font is bundled into the build.</li>
+    <li>No tracking across apps or websites. No data linked to identity. Nothing leaves the device.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How tales surface</h2>
+  <p>Hausmärchen does not use an algorithm to choose what you read. The Home section grid follows a hand-set display order. Each section's tale list is sorted by KHM number (canonical Grimm numbering). The daily-tale feature, when enabled, selects from a fixed list with a date-seeded pseudo-random pick — the same date always returns the same tale, so the choice is reproducible and inspectable rather than personalized.</p>
+  <p>The free-tier hero illustration on a tale page also follows a fixed rule: Jessica von Braun's plate if one exists for that tale; otherwise Arthur Rackham's; otherwise a deterministic per-tale pick from the remaining illustrators that never shifts between launches. No machine-learning model runs on-device or on a server to make these choices.</p>
+</section>
+
+<section>
+  <h2>From the studio</h2>
+  <p class="lead">Solocosmo Studios is a small independent studio that makes carefully-finished iOS apps. Hausmärchen is the studio's literary line.</p>
+  <p>Jessica von Braun is the studio's featured artist; her original watercolours sit among the seventeen illustrators. Hausmärchen was edited by hand — every synopsis, every Junior rewrite, every section heading. There is no AI assistant choosing what you see. The corpus is finite. The Grimms finished writing in 1857. You buy the book and the book is yours.</p>
+</section>
+
+<section style="text-align: center;">
+  <div class="links-row">
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="mailto:solocosmo@gmail.com">Contact</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Hausmärchen · Solocosmo Studios · © 2026</p>
+  <p style="margin-top: 8px;">Made on the East Coast of the United States · <a href="mailto:solocosmo@gmail.com">solocosmo@gmail.com</a></p>
+</footer>
+
+</body>
+</html>
